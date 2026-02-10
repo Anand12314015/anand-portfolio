@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anand | Portfolio</title>
+    <title>Anand Sai Reddy | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/portfolio.png">
     <style>
@@ -61,13 +61,13 @@
             background: linear-gradient(135deg, #8f6df0, #3cc68d);
         }
         
-        /* Enhanced Navbar */
+        /* Enhanced Navbar - Updated with Profile */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 5%;
-            background: rgba(15, 15, 15, 0.9);
+            padding: 15px 5%;
+            background: rgba(15, 15, 15, 0.95);
             backdrop-filter: blur(15px) saturate(180%);
             position: fixed;
             top: 0;
@@ -77,11 +77,32 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
         
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .profile-image-nav {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: var(--glow);
+            transition: var(--transition);
+        }
+        
+        .profile-image-nav:hover {
+            transform: scale(1.08);
+            border-color: var(--secondary);
+        }
+        
         .logo {
             color: var(--primary);
             font-weight: 900;
-            font-size: 2.2rem;
-            letter-spacing: 3px;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -97,6 +118,16 @@
         
         .logo span {
             color: var(--secondary);
+        }
+        
+        .full-name {
+            color: var(--light);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-left: 10px;
+            border-left: 3px solid var(--secondary);
+            padding-left: 15px;
         }
         
         .nav-links {
@@ -163,12 +194,12 @@
             transform: rotate(90deg);
         }
         
-        /* Hero Section - Premium Design */
+        /* Hero Section - Updated with Large Profile */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 0 5%;
             position: relative;
             overflow: hidden;
@@ -204,14 +235,45 @@
         }
         
         .hero-content {
-            max-width: 1000px;
-            text-align: center;
+            max-width: 1200px;
+            text-align: left;
             z-index: 1;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-profile {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        .profile-image-hero {
+            width: 280px;
+            height: 280px;
+            border-radius: 30px;
+            object-fit: cover;
+            border: 5px solid transparent;
+            background: var(--gradient) border-box;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), var(--glow);
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .profile-image-hero:hover {
+            transform: scale(1.03) rotate(2deg);
+            box-shadow: 0 35px 70px rgba(127, 90, 240, 0.4);
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
         }
         
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             background: var(--gradient);
@@ -221,6 +283,7 @@
             text-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             line-height: 1.1;
             animation: textGlow 3s ease-in-out infinite alternate;
+            text-align: left;
         }
         
         @keyframes textGlow {
@@ -233,11 +296,10 @@
             color: var(--gray);
             margin-bottom: 3rem;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
             font-weight: 300;
             letter-spacing: 1px;
             line-height: 1.6;
+            text-align: left;
         }
         
         .hero-info {
@@ -249,8 +311,6 @@
             backdrop-filter: blur(20px);
             text-align: left;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transition: var(--transition);
             position: relative;
@@ -300,7 +360,7 @@
         
         .hero-buttons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 25px;
             flex-wrap: wrap;
         }
@@ -1281,11 +1341,43 @@
             .tech-photo-container {
                 height: 450px;
             }
+            
+            .hero-content {
+                justify-content: center;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-text, .hero h1, .subtitle, .hero-info, .hero-buttons {
+                text-align: center;
+            }
+            
+            .hero-info, .hero-buttons {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .full-name {
+                display: none;
+            }
         }
         
         @media (max-width: 768px) {
             nav {
                 padding: 15px 25px;
+            }
+            
+            .nav-brand {
+                gap: 10px;
+            }
+            
+            .profile-image-nav {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
             }
             
             .nav-links {
@@ -1360,6 +1452,16 @@
             .tech-photo-container {
                 height: 400px;
             }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image-hero {
+                width: 220px;
+                height: 220px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1391,6 +1493,12 @@
             .contact-container {
                 gap: 40px;
             }
+            
+            .profile-image-hero {
+                width: 180px;
+                height: 180px;
+                border-radius: 20px;
+            }
         }
         
         /* Animations */
@@ -1414,7 +1522,11 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">ANAND<span>.</span></div>
+        <div class="nav-brand">
+            <img src="https://i.ibb.co/7NJ2snKP/profile.jpg" alt="Anand Sai Reddy" class="profile-image-nav">
+            <div class="logo">ANAND<span>.</span></div>
+            <div class="full-name">Anand Sai Reddy</div>
+        </div>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -1434,20 +1546,25 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="fade-in">SOFTWARE ENGINEER<br><span style="font-size: 3.5rem;">AI & DATA ANALYST</span></h1>
-            <p class="subtitle fade-in">Building intelligent solutions with cutting-edge technology | Java, Python & ML Expert | Data Visualization Specialist</p>
-            <div class="hero-info fade-in">
-                <p><i class="fas fa-envelope"></i> [Your Email Here]</p>
-                <p><i class="fas fa-phone"></i> [Your Phone Here]</p>
-                <p><i class="fas fa-map-marker-alt"></i> Punjab, India</p>
+            <div class="hero-profile fade-in">
+                <img src="https://i.ibb.co/7NJ2snKP/profile.jpg" alt="Anand Sai Reddy - Software Engineer" class="profile-image-hero">
             </div>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn-primary fade-in">
-                    <i class="fas fa-rocket"></i> Explore Projects
-                </a>
-                <a href="cv Anand (1).pdf" target="_blank" class="btn-secondary fade-in" id="downloadCVBtn">
-                    <i class="fas fa-file-download"></i> Download CV
-                </a>
+            <div class="hero-text">
+                <h1 class="fade-in">SOFTWARE ENGINEER<br><span style="font-size: 3rem;">AI & DATA ANALYST</span></h1>
+                <p class="subtitle fade-in">Building intelligent solutions with cutting-edge technology | Java, Python & ML Expert | Data Visualization Specialist</p>
+                <div class="hero-info fade-in">
+                    <p><i class="fas fa-envelope"></i> anandsaireddy32@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 7893184205</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Punjab, India</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary fade-in">
+                        <i class="fas fa-rocket"></i> Explore Projects
+                    </a>
+                    <a href="https://drive.google.com/file/d/1Eg2am51jYAzyRtcK_Ej7dl0JLwDAOxkj/view?usp=drive_link" target="_blank" class="btn-secondary fade-in" id="downloadCVBtn">
+                        <i class="fas fa-file-download"></i> Download CV
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1458,7 +1575,7 @@
         <div class="about-content">
             <div class="about-text">
                 <h2 class="fade-in">Software Developer & Data Analyst</h2>
-                <p class="fade-in">I'm a passionate Computer Science student at Lovely Professional University with a CGPA of 6.3, specializing in software development, AI technologies, and data analysis. My journey in tech is driven by curiosity and the desire to create impactful solutions.</p>
+                <p class="fade-in">I'm a passionate Computer Science student at Lovely Professional University, specializing in software development, AI technologies, and data analysis. My journey in tech is driven by curiosity and the desire to create impactful solutions.</p>
                 <p class="fade-in">With expertise in Java, Python, C++, and modern data visualization tools, I focus on building intelligent systems that solve real-world problems. My projects range from AI-powered call optimization to interactive data dashboards.</p>
                 <p class="fade-in">I have hands-on experience in machine learning, natural language processing, and data analysis using frameworks like NumPy, Pandas, and Matplotlib. My training in data structures and algorithms has strengthened my problem-solving capabilities.</p>
                 <p class="fade-in">When I'm not coding, I participate in coding challenges on LeetCode and GeeksforGeeks, contribute to open-source projects, and continuously learn new technologies to stay ahead in the rapidly evolving tech landscape.</p>
@@ -1534,8 +1651,8 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#projects" class="project-link">
-                        <i class="fab fa-github"></i> Project Details
+                    <a href="https://www.linkedin.com/posts/anand-sai-reddy-469b97297_datascience-cse-excel-ugcPost-7317854666237562881-1BT-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEfmftEBJ-620BgJPyen4zMew2NbDfTR6bA" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> View Project Details
                     </a>
                 </div>
             </div>
@@ -1556,7 +1673,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com" target="_blank" class="project-link">
+                    <a href="https://github.com/Anand12314015/AI-Enhanced-System-Call-Optimization" target="_blank" class="project-link">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
@@ -1581,6 +1698,11 @@
                         <li>Enhanced logical thinking and coding efficiency through hands-on projects, coding exercises, and algorithm-based problem solving.</li>
                     </ul>
                 </div>
+                <div style="margin-top: 20px;">
+                    <a href="https://drive.google.com/file/d/18b3M7n6Z0kBzGjrMKnkCIJwRHFmix8Pd/view?usp=drive_link" target="_blank" class="certificate-link">
+                        View Certificate <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1594,7 +1716,7 @@
                     <h3>Java Programming</h3>
                     <div class="certificate-date">January 2025 - May 2025 | NeoColab</div>
                 </div>
-                <a href="#certificates" class="certificate-link">
+                <a href="https://drive.google.com/file/d/1esw8dPRPVRfEHz9WZ9emg5pcKD8FZtkW/view?usp=drive_link" target="_blank" class="certificate-link">
                     View Certificate <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
@@ -1604,7 +1726,7 @@
                     <h3>Responsive Web Design</h3>
                     <div class="certificate-date">August 2023 - December 2023 | FreeCodeCamp</div>
                 </div>
-                <a href="#certificates" class="certificate-link">
+                <a href="https://drive.google.com/file/d/1DtI5mI9iZVkS6HoIz5AVk_N3ZLmOY7XU/view?usp=drive_link" target="_blank" class="certificate-link">
                     View Certificate <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
@@ -1614,7 +1736,7 @@
                     <h3>Computer Programming</h3>
                     <div class="certificate-date">January 2024 - May 2025 | NeoColab</div>
                 </div>
-                <a href="#certificates" class="certificate-link">
+                <a href="https://drive.google.com/file/d/1QKJYW6uIyz58WSkqE-yqcdEQgL1tYUsU/view?usp=drive_link" target="_blank" class="certificate-link">
                     View Certificate <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
@@ -1680,11 +1802,11 @@
                 <h3>Contact Information</h3>
                 <div class="contact-detail">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:your-email@example.com">[Your Email Here]</a>
+                    <a href="mailto:anandsaireddy32@gmail.com">anandsaireddy32@gmail.com</a>
                 </div>
                 <div class="contact-detail">
                     <i class="fas fa-phone"></i>
-                    <a href="tel:+91XXXXXXXXXX">[Your Phone Here]</a>
+                    <a href="tel:+917893184205">+91 7893184205</a>
                 </div>
                 <div class="contact-detail">
                     <i class="fas fa-map-marker-alt"></i>
@@ -1692,17 +1814,17 @@
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" class="social-link">
+                    <a href="https://github.com/Anand12314015" target="_blank" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com" target="_blank" class="social-link">
+                    <a href="https://www.linkedin.com/in/anand-sai-reddy-469b97297/" target="_blank" class="social-link">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://geeksforgeeks.org" target="_blank" class="social-link">
-                        <i class="fas fa-code"></i>
+                    <a href="mailto:anandsaireddy32@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://leetcode.com" target="_blank" class="social-link">
-                        <i class="fas fa-laptop-code"></i>
+                    <a href="https://drive.google.com/file/d/1Eg2am51jYAzyRtcK_Ej7dl0JLwDAOxkj/view?usp=drive_link" target="_blank" class="social-link">
+                        <i class="fas fa-file-pdf"></i>
                     </a>
                 </div>
             </div>
@@ -1736,18 +1858,18 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Anand | Portfolio - Software Engineer & Data Analyst</p>
+        <p>© 2025 Anand Sai Reddy | Portfolio - Software Engineer & Data Analyst</p>
         <div class="footer-links">
             <a href="#home">Home</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-            <a href="cv Anand (1).pdf" target="_blank">Download CV</a>
+            <a href="https://drive.google.com/file/d/1Eg2am51jYAzyRtcK_Ej7dl0JLwDAOxkj/view?usp=drive_link" target="_blank">Download CV</a>
         </div>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            console.log("🚀 Portfolio Loaded | Anand © 2025");
+            console.log("🚀 Portfolio Loaded | Anand Sai Reddy © 2025");
             
             // Mobile menu toggle
             const menuToggle = document.getElementById('menuToggle');
@@ -1859,7 +1981,7 @@
             });
             
             // Console welcome message
-            console.log('%c🌟 Welcome to Anand\'s Portfolio! 🌟', 'color: #7f5af0; font-size: 18px; font-weight: bold;');
+            console.log('%c🌟 Welcome to Anand Sai Reddy\'s Portfolio! 🌟', 'color: #7f5af0; font-size: 18px; font-weight: bold;');
             console.log('%cSoftware Engineer | Data Analyst | AI Enthusiast', 'color: #2cb67d; font-size: 14px;');
         });
     </script>
